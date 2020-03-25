@@ -1,0 +1,27 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "uni-app",
+				"usingComponents": { //按需引入单个页面组件
+				      "van-button": "/wxcomponents/vant/button/index"
+				    }
+			}
+		}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8",
+		//按需全局引入组件
+		// "usingComponents": {
+		//   "van-button": "/wxcomponents/vant/button/index",
+		//   "van-grid": "/wxcomponents/vant/grid/index",
+		//   "van-grid-item": "/wxcomponents/vant/grid-item/index",
+		//   "van-index-bar": "/wxcomponents/vant/index-bar/index",
+		//   "van-index-anchor": "/wxcomponents/vant/index-anchor/index"
+		// }
+	}
+}
