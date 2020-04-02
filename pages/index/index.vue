@@ -19,7 +19,9 @@
 			}
 		},
 		onLoad() {
-
+			uni.$on("testEmit",rel=>{
+				console.log(rel)
+			})
 		},
 		components:{
 			test

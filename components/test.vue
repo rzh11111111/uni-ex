@@ -18,7 +18,8 @@
 		},
 		methods:{
 			tests(){
-				this.$emit('testShowName',{name:'Mesa'})
+				// this.$emit('testShowName',{name:'Mesa'})
+				uni.$emit('testEmit',{name:'aaa'})
 			}
 		}
 	}
