@@ -5,21 +5,29 @@
 			<text class="title">{{title}}</text>
 			<van-button type="default">默认按钮</van-button>
 		</view>
+		<test :msg="msg" @testShowName="testEvent"></test>
 	</view>
 </template>
 
 <script>
+	import test from '../../components/test.vue'
 	export default {
 		data() {
 			return {
-				title: 'Hello uniapp'
+				title: 'Hello uniapp',
+				msg:'Msea'
 			}
 		},
 		onLoad() {
 
 		},
+		components:{
+			test
+		},
 		methods: {
-
+		testEvent(rel){
+			console.log(rel)
+		}
 		}
 	}
 </script>
