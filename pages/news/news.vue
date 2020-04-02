@@ -24,7 +24,13 @@
 		onHide() {
 			console.log('页面隐藏，执行一次onHide')
 		},
-		
+		onPullDownRefresh() {//需要在页面pages.json里开启下拉
+		        // console.log('refresh');
+		        setTimeout(function () {
+		            uni.stopPullDownRefresh();
+					console.log('refresh1');
+		        }, 1000);
+		    }
 		
 	}
 </script>
