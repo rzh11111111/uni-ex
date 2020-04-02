@@ -30,7 +30,18 @@
 		            uni.stopPullDownRefresh();
 					console.log('refresh1');
 		        }, 1000);
-		    }
+		    },
+		onTabItemTap(rel) { //点击tab进入这个页面时触发
+			console.log('用户点击了tab',rel)
+		},
+		onShareAppMessage(rel) {
+			console.log('分享',rel)
+			return {
+				title:'我是这个接最靓的仔',
+				path:"pages/news/news",
+				imageUrl:"https://www.baidu.com/img/bd_logo1.png"
+			}
+		}
 		
 	}
 </script>

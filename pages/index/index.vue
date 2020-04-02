@@ -23,7 +23,7 @@
 			return {
 				title: 'Hello uniapp',
 				msg:'Msea',
-				names:['lili','luce','haha','feifei']
+				names:['lili','luce','haha','feifei','feifei2','feifei32','feifei4']
 			}
 		},
 		onLoad() {
@@ -41,6 +41,9 @@
 		testEvent(rel){
 			console.log(rel)
 		}
+		},
+		onPageScroll(rel) {
+			console.log('页面滚动',rel)
 		}
 	}
 </script>
