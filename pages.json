@@ -3,18 +3,55 @@
 		{
 			"path": "pages/index/index",
 			"style": {
-				"navigationBarTitleText": "uni-app",
+				"navigationBarTitleText": "首页",
 				"usingComponents": { //按需引入单个页面组件
 				      "van-button": "/wxcomponents/vant/button/index"
 				    }
 			}
 		}
-	],
+	    ,{
+            "path" : "pages/news/news",
+            "style": {
+            	"navigationBarTitleText": "新闻",
+            	"usingComponents": { //按需引入单个页面组件
+            	      "van-button": "/wxcomponents/vant/button/index"
+            	    }
+            }
+        }
+        ,{
+            "path" : "pages/text/text",
+            "style": {
+            	"navigationBarTitleText": "测试",
+            	"usingComponents": { //按需引入单个页面组件
+            	      "van-button": "/wxcomponents/vant/button/index"
+            	    }
+            }
+        }
+    ],
+	"tabBar": {
+	    "color": "#7A7E83",
+	    "selectedColor": "#3cc51f",
+	    "borderStyle": "black",
+	    "backgroundColor": "#ffffff",
+	    "list": [{
+	        "pagePath": "pages/index/index",
+	        
+	        "text": "首页1"
+	    }, {
+	        "pagePath": "pages/news/news",
+	        
+	        "text": "新闻1"
+	    }, {
+	        "pagePath": "pages/text/text",
+	        
+	        "text": "测试1"
+	    }]
+	},
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "uni-app",
 		"navigationBarBackgroundColor": "#F8F8F8",
-		"backgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
 		//按需全局引入组件
 		// "usingComponents": {
 		//   "van-button": "/wxcomponents/vant/button/index",

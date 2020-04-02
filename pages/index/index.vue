@@ -3,6 +3,7 @@
 		<image class="logo" src="/static/logo.png"></image>
 		<view class="text-area">
 			<text class="title">{{title}}</text>
+			<van-button type="default">默认按钮</van-button>
 		</view>
 	</view>
 </template>
@@ -11,7 +12,7 @@
 	export default {
 		data() {
 			return {
-				title: 'Hello'
+				title: 'Hello uniapp'
 			}
 		},
 		onLoad() {
