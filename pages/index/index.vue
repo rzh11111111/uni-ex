@@ -10,7 +10,9 @@
 		<!-- <view :class="{box111:true}">{{msg.indexOf('sea')!==-1?"最靓的崽":"NO"}}</view> -->
 					<!-- 动态添加属性 -->
 		<view :class="['box111','box222']">{{msg.indexOf('sea')!==-1?"最靓的崽":"NO"}}</view>
-					
+		<view v-for="(item,index) in names" :key="index">
+			{{item}}
+		</view>		
 	</view>
 </template>
 
@@ -20,7 +22,8 @@
 		data() {
 			return {
 				title: 'Hello uniapp',
-				msg:'Msea'
+				msg:'Msea',
+				names:['lili','luce','haha','feifei']
 			}
 		},
 		onLoad() {
