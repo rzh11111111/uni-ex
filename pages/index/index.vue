@@ -6,6 +6,11 @@
 			<van-button type="default">默认按钮</van-button>
 		</view>
 		<test :msg="msg" @testShowName="testEvent"></test>
+		<!-- indexOf微信小程序原生不可以，uni可以 -->
+		<!-- <view :class="{box111:true}">{{msg.indexOf('sea')!==-1?"最靓的崽":"NO"}}</view> -->
+					<!-- 动态添加属性 -->
+		<view :class="['box111','box222']">{{msg.indexOf('sea')!==-1?"最靓的崽":"NO"}}</view>
+					
 	</view>
 </template>
 
@@ -19,9 +24,12 @@
 			}
 		},
 		onLoad() {
-			uni.$on("testEmit",rel=>{
+			uni.$on("testEmit",rel=>{ //uni提供的方法，可以多次调用
 				console.log(rel)
 			})
+			// uni.$once("testEmit",rel=>{ //uni提供的方法，只能调用一次
+			// 	console.log(rel)
+			// })
 		},
 		components:{
 			test
@@ -59,5 +67,15 @@
 	.title {
 		font-size: 36rpx;
 		color: #8f8f94;
+	}
+	.box111{
+		width: 200rpx;
+		height: 50rpx;
+		border: 1px solid green;
+	}
+	.box222{
+		width: 200rpx;
+		height: 50rpx;
+		border: 1px solid red;
 	}
 </style>
