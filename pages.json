@@ -28,6 +28,14 @@
             	    }
             }
         }
+        ,{
+            "path" : "pages/one/one",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/two/two",
+            "style" : {}
+        }
     ],
 	"tabBar": {
 	    "color": "#7A7E83",

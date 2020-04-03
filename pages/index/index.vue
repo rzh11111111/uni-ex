@@ -12,7 +12,9 @@
 		<view :class="['box111','box222']">{{msg.indexOf('sea')!==-1?"最靓的崽":"NO"}}</view>
 		<view v-for="(item,index) in names" :key="index">
 			{{item}}
-		</view>		
+		</view>	
+		<button type="default" @click="toPath">tonews</button>
+		<button type="default" @click="toOne">toOne</button>
 	</view>
 </template>
 
@@ -40,6 +42,16 @@
 		methods: {
 		testEvent(rel){
 			console.log(rel)
+		},
+		toPath(){
+			uni.switchTab({
+				url:"../news/news"
+			})
+		},
+		toOne(){
+			uni.navigateTo({
+			    url: '../one/one?id=1&name=uniapp'
+			});
 		}
 		},
 		onPageScroll(rel) {

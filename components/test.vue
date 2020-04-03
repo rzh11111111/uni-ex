@@ -13,8 +13,11 @@
 				
 			};
 		},
-		onLoad(po) {
-			console.log(po)
+		mounted() {
+			console.log('挂在到实例上去之后调用');
+			this.$nextTick(function(){
+				console.log('渲染完毕')
+			})
 		},
 		methods:{
 			tests(){
