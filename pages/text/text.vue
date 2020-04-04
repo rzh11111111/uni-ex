@@ -63,6 +63,9 @@
 				currentNum:0
 			};
 		},
+		onReady() {
+			this.getNodesInfo()
+		},
 		methods:{
 			test(e){//改变时轮播的index
 				console.log(e.detail.current)
@@ -74,6 +77,24 @@
 			scroll(e){
 				//拿到右边滚动scropptop的值
 				console.log(e.target.scrollTop)
+			},
+			getNodesInfo(){
+				//uni里面没有document和window
+				const query = uni.createSelectorQuery().in(this)
+				
+				query.selectAll('.title').boundingClientRect(data=>{
+					// console.log("得到布局位置信息"+ JSON.stringify(data))
+					// console.log("节点离页面顶部的距离为"+data.top)
+				}).exec((res)=>{
+					//这个top是距离屏幕顶部的距离，不是容器顶部的距离
+					console.log(res)
+					let nodes=res[0]
+					let rel=[]
+					nodes.map(item=>{
+						rel.push(item.top)
+					})
+					console.log(rel)
+				})
 			}
 		}
 	}
