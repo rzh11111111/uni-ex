@@ -11,7 +11,8 @@
 				3
 			</swiper-item>
 		</swiper>
-		
+		<view class="box1"></view>
+		<view class="box2"></view>
 		<scroll-view scroll-x="true" style="white-space: nowrap;">
 			<view style="display:inline-block; width:300rpx;height:100rpx;background: #007AFF;">A</view>
 			<view style="display:inline-block;width:300rpx;height:100rpx;background:#008000;">b</view>
@@ -20,7 +21,11 @@
 		
 		<view class="all">
 			<view class="left">
-				<view v-for="(item,index) in list" :key="index" @click="setId(index)">
+				<view v-for="(item,index) in list" 
+				:key="index" 
+				@click="setId(index)"
+				:class="{clickId:index===currentNum}"
+				>
 					{{item.title}}
 				</view>
 			</view>
@@ -29,6 +34,8 @@
 				:scroll-y="true" 
 				style="white-space: nowrap;height: 200px;"
 				:scroll-into-view="clickId"
+				scroll-with-animation
+				@scroll="scroll"
 				>
 					<view v-for="(item,index) in list" :key="index">
 						<view class="title" :id="'po'+index">{{item.title}}</view>
@@ -52,7 +59,8 @@
 				{title:"南",list:["c1","c2","c3","c4"]},
 				{title:"北",list:["d1","d2","d3","d4"]}
 				],
-				clickId:''
+				clickId:'',
+				currentNum:0
 			};
 		},
 		methods:{
@@ -61,6 +69,11 @@
 			},
 			setId(index){
 				this.clickId="po"+index;
+				this.currentNum=index;
+			},
+			scroll(e){
+				//拿到右边滚动scropptop的值
+				console.log(e.target.scrollTop)
 			}
 		}
 	}
@@ -76,5 +89,18 @@
 	.right{
 		flex:1;
 	}
+}
+.clickId{
+	background: #4CD964;
+}
+.box1{
+	width: 100px;
+	height: 100px;
+	background: red;
+}
+.box2{
+	width: 100rpx;
+	height: 100px;
+	background: yellow;
 }
 </style>
