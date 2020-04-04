@@ -5,7 +5,8 @@ export default new Vuex.Store({
 	state:{
 		num:0,
 		price:10,
-		name:'apple'
+		name:'apple',
+		testList:[]
 	},
 	//全局同步方法
 	mutations:{
@@ -23,7 +24,9 @@ export default new Vuex.Store({
 		//this.$store.dispatch('testActions')调用
 		testActions(context){
 			//异步,context里面包含了state，mutations，getters，actions
-			console.log(context)
+			setTimeout(()=>{
+				context.state.testList=['111','222']
+			},2000)
 		}
 	}
 })

@@ -56,6 +56,10 @@
 			},
 			count(){
 				return this.$store.getters.count
+			},
+			testList(){
+				console.log(this.$store.state.testList)
+				return this.$store.state.testList
 			}
 		},
 		methods:{
