@@ -36,7 +36,9 @@
 				:scroll-into-view="clickId"
 				scroll-with-animation
 				@scroll="scroll"
+				
 				>
+				<!-- @scrolltolower="scrolltolower" -->
 					<view v-for="(item,index) in list" :key="index">
 						<view class="title" :id="'po'+index">{{item.title}}</view>
 						<view v-for="(it,idx) in item.list" :key="idx">
@@ -60,7 +62,8 @@
 				{title:"北",list:["d1","d2","d3","d4"]}
 				],
 				clickId:'',
-				currentNum:0
+				currentNum:0,
+				topList:[]
 			};
 		},
 		onReady() {
@@ -77,6 +80,14 @@
 			scroll(e){
 				//拿到右边滚动scropptop的值
 				console.log(e.target.scrollTop)
+				let scrollTop=e.target.scrollTop;
+				for(let i=0;i<this.topList.length;i++){
+					let h1=this.topList[i];
+					let h2=this.topList[i+1]
+					if(scrollTop>=h1&&scrollTop<h2){
+						this.currentNum=i;
+					}
+				}
 			},
 			getNodesInfo(){
 				//uni里面没有document和window
@@ -91,10 +102,16 @@
 					let nodes=res[0]
 					let rel=[]
 					nodes.map(item=>{
-						rel.push(item.top)
+						rel.push(item.top-nodes[0].top)//所以要减去第一个的距离屏幕顶部的距离
 					})
-					console.log(rel)
+					this.topList=rel
 				})
+			},
+			scrolltolower(){//滚动到底部时的事件
+				setTimeout(()=>{//还有问题
+					this.currentNum=3
+				},80)
+				
 			}
 		}
 	}

@@ -1,6 +1,7 @@
 <template>
 	<view>
-		
+		<view>{{num}}</view>
+		<button type="default" @click="addsss">321</button>
 	</view>
 </template>
 
@@ -13,6 +14,8 @@
 		},
 		onLoad() {
 			console.log('页面初始化，执行一次onLoad')
+			this.testRequest()
+			console.log(this.$store.state)
 		},
 		onShow() {
 			console.log('页面显示，执行一次onShow')
@@ -40,6 +43,31 @@
 				title:'我是这个接最靓的仔',
 				path:"pages/news/news",
 				imageUrl:"https://www.baidu.com/img/bd_logo1.png"
+			}
+		},
+		computed:{
+			num(){
+				return this.$store.state.num
+			}
+		},
+		methods:{
+			testRequest(){
+				uni.request({
+					url:'https://bird.ioliu.cn/weather',
+					data:{
+						city:'北京'
+					},
+					// header:{
+					// 	'custom-header':'hello'
+					// },
+					success:res=>{
+						console.log(res.data)
+						// this.text='request success'
+					}
+				})
+			},
+			addsss(){ //改变vuex值
+				this.$store.commit("add")
 			}
 		}
 		
