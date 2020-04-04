@@ -2,6 +2,11 @@
 	<view>
 		<view>{{num}}</view>
 		<button type="default" @click="addsss">321</button>
+		<view>{{name}}</view>
+		<view>数量:{{num}}</view>
+		<view>价格:{{count}}</view>
+		
+		<button type="primary" @click="testActions">testActions</button>
 	</view>
 </template>
 
@@ -9,7 +14,7 @@
 	export default {
 		data() {
 			return {
-				
+				name:this.$store.state.name
 			};
 		},
 		onLoad() {
@@ -48,6 +53,9 @@
 		computed:{
 			num(){
 				return this.$store.state.num
+			},
+			count(){
+				return this.$store.getters.count
 			}
 		},
 		methods:{
@@ -68,6 +76,9 @@
 			},
 			addsss(){ //改变vuex值
 				this.$store.commit("add")
+			},
+			testActions(){
+				this.$store.dispatch('testActions')
 			}
 		}
 		
