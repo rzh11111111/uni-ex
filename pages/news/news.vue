@@ -63,20 +63,30 @@
 			}
 		},
 		methods:{
-			testRequest(){
-				uni.request({
-					url:'https://bird.ioliu.cn/weather',
-					data:{
-						city:'北京'
+			async testRequest(){
+				// uni.request({
+				// 	url:'https://bird.ioliu.cn/weather',
+				// 	data:{
+				// 		city:'北京'
+				// 	},
+					
+				// 	success:res=>{
+				// 		console.log(res.data)
+				// 	}
+				// })
+				let _this = this;
+				var allParams = {
+					url: 'weather?city=北京',//地址为Config.restUrl拼接地址 
+					setUpUrl: true, //不需要拼接请设置为false 
+					type: 'post', //请求类型
+					sCallback: function (data) {
+						console.log(data)
 					},
-					// header:{
-					// 	'custom-header':'hello'
-					// },
-					success:res=>{
-						console.log(res.data)
-						// this.text='request success'
+					eCallback: function () {
 					}
-				})
+				};
+				console.log(_this.$base)
+				await _this.$base.request(allParams);
 			},
 			addsss(){ //改变vuex值
 				this.$store.commit("add")
