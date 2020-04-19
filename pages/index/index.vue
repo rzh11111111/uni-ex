@@ -6,6 +6,7 @@
 			<van-button type="default">默认按钮</van-button>
 		</view>
 		<test :msg="msg" @testShowName="testEvent"></test>
+		
 		<!-- indexOf微信小程序原生不可以，uni可以 -->
 		<!-- <view :class="{box111:true}">{{msg.indexOf('sea')!==-1?"最靓的崽":"NO"}}</view> -->
 					<!-- 动态添加属性 -->
@@ -54,9 +55,9 @@
 			});
 		}
 		},
-		onPageScroll(rel) {
-			console.log('页面滚动',rel)
-		}
+		// onPageScroll(rel) {
+		// 	console.log('页面滚动',rel)
+		// }
 	}
 </script>
 

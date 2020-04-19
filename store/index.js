@@ -6,19 +6,27 @@ export default new Vuex.Store({
 		num:0,
 		price:10,
 		name:'apple',
-		testList:[]
+		testList:[],
+		
+		userInfo: {}
 	},
 	//全局同步方法
 	mutations:{
 		//this.$store.commit("add")调用
 		add(state){
 			state.num++
-		}
+		},
+		
+		SET_USER_INFO: (state, userInfo) => {
+		    	state.userInfo = userInfo
+		    }
 	},
 	getters:{//计算属性
 		count(state){
 			return state.price*state.num
-		}
+		},
+		
+		userInfo: state => state.userInfo
 	},
 	actions:{
 		//this.$store.dispatch('testActions')调用
@@ -27,6 +35,13 @@ export default new Vuex.Store({
 			setTimeout(()=>{
 				context.state.testList=['111','222']
 			},2000)
-		}
+		},
+		
+		// 缓存用户信息
+		    setUserInfo({
+		        commit
+		    }, userInfo) {
+		    	commit('SET_USER_INFO', userInfo)
+		    }
 	}
 })

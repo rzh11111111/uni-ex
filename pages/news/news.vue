@@ -7,6 +7,10 @@
 		<view>价格:{{count}}</view>
 		
 		<button type="primary" @click="testActions">testActions</button>
+		<map 
+			class="maps"
+			:latitude="latitude" :longitude="longitude" 
+		/>
 	</view>
 </template>
 
@@ -14,13 +18,27 @@
 	export default {
 		data() {
 			return {
-				name:this.$store.state.name
+				name:this.$store.state.name,
+				id:0, // 使用 marker点击事件 需要填写id
+				title: 'map',
+				latitude: 39.909,
+				longitude: 116.39742,
+				
 			};
 		},
 		onLoad() {
 			console.log('页面初始化，执行一次onLoad')
 			this.testRequest()
 			console.log(this.$store.state)
+			let that=this
+			uni.getLocation({
+			    type: 'wgs84',
+			    success: function (res) {
+					that.latitude=res.latitude
+					that.longitude=res.longitude
+			        console.log('当前位置的：' + JSON.stringify(res));
+			    }
+			});
 		},
 		onShow() {
 			console.log('页面显示，执行一次onShow')
@@ -100,5 +118,7 @@
 </script>
 
 <style lang="scss">
-
+.maps{
+	width: 750px;
+}
 </style>
