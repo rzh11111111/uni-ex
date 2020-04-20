@@ -1,15 +1,28 @@
 
 <script>
-	import { AppModel } from './api/app.js'
-	const appModel = new AppModel()
+	// import { AppModel } from './api/app.js'
+	// const appModel = new AppModel()
  
+	global.isLogin=function(){
+		try{
+			var suid = uni.getStorageSync('suid')
+			var suid = uni.getStorageSync('srand')
+		}catch(e){
+			
+		}
+		if(suid == '' || srand == ''){
+			return false;
+		}else{
+			return [suid,srand];
+		}
+	}
 	export default {
 		onLaunch: function(option) {
 			console.log('App Launch',option)
 		},
 		onShow: function() {
 			console.log('App Show')
-			this.getLogin()
+			// this.getLogin()
 		},
 		onHide: function() {
 			console.log('App Hide')
