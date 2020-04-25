@@ -7,10 +7,10 @@
 		<view>价格:{{count}}</view>
 		
 		<button type="primary" @click="testActions">testActions</button>
-		<map 
+		<!-- <map 
 			class="maps"
 			:latitude="latitude" :longitude="longitude" 
-		/>
+		/> -->
 	</view>
 </template>
 
@@ -28,17 +28,17 @@
 		},
 		onLoad() {
 			console.log('页面初始化，执行一次onLoad')
-			this.testRequest()
+			// this.testRequest()
 			console.log(this.$store.state)
 			let that=this
-			uni.getLocation({
-			    type: 'wgs84',
-			    success: function (res) {
-					that.latitude=res.latitude
-					that.longitude=res.longitude
-			        console.log('当前位置的：' + JSON.stringify(res));
-			    }
-			});
+			// uni.getLocation({
+			//     type: 'wgs84',
+			//     success: function (res) {
+			// 		that.latitude=res.latitude
+			// 		that.longitude=res.longitude
+			//         console.log('当前位置的：' + JSON.stringify(res));
+			//     }
+			// });
 		},
 		onShow() {
 			console.log('页面显示，执行一次onShow')

@@ -6,15 +6,16 @@
 	global.isLogin=function(){
 		try{
 			var suid = uni.getStorageSync('suid')
-			var suid = uni.getStorageSync('srand')
+			var srand = uni.getStorageSync('srand')
+			if(suid == '' || srand == ''){
+				return false;
+			}else{
+				return [suid,srand];
+			}
 		}catch(e){
 			
 		}
-		if(suid == '' || srand == ''){
-			return false;
-		}else{
-			return [suid,srand];
-		}
+		
 	}
 	export default {
 		onLaunch: function(option) {
