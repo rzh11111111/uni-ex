@@ -42,6 +42,7 @@
 							try{
 								uni.setStorageSync('suid',1)
 								uni.setStorageSync('srand',111111)
+								uni.navigateBack();
 							}catch(e){
 								//sss
 							}
