@@ -16,6 +16,7 @@
 		</view>	
 		<button type="default" @click="toPath">tonews</button>
 		<button type="default" @click="toOne">toOne</button>
+		<!-- <button type="primary" @click="share">分享</button> -->
 	</view>
 </template>
 
@@ -39,6 +40,13 @@
 		},
 		components:{
 			test
+		},
+		onShareAppMessage:function(){ //小程序右上角的分享
+			return{
+				title:'test...',
+				page:'/pages/index/index',
+				imageUrl:''
+			}
 		},
 		methods: {
 		testEvent(rel){
