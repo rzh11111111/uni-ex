@@ -6,7 +6,7 @@
 			"style": {
 				"navigationBarTitleText": "首页",
 				"usingComponents": { //按需引入单个页面组件
-				      "van-button": "/wxcomponents/vant/button/index"
+				      // "van-button": "/wxcomponents/vant/button/index"
 				    }
 			}
 		}
@@ -20,7 +20,7 @@
             "style": {
             	"navigationBarTitleText": "新闻",
             	"usingComponents": { //按需引入单个页面组件
-            	      "van-button": "/wxcomponents/vant/button/index"
+            	      // "van-button": "/wxcomponents/vant/button/index"
             	    },
 					"enablePullDownRefresh":true //开启下拉
             }
@@ -30,7 +30,7 @@
             "style": {
             	"navigationBarTitleText": "测试",
             	"usingComponents": { //按需引入单个页面组件
-            	      "van-button": "/wxcomponents/vant/button/index"
+            	      // "van-button": "/wxcomponents/vant/button/index"
             	    }
             }
         }

@@ -107,12 +107,12 @@
 					this.topList=rel
 				})
 			},
-			scrolltolower(){//滚动到底部时的事件
-				setTimeout(()=>{//还有问题
-					this.currentNum=3
-				},80)
+			// scrolltolower(){//滚动到底部时的事件
+			// 	setTimeout(()=>{//还有问题
+			// 		this.currentNum=3
+			// 	},80)
 				
-			}
+			// }
 		}
 	}
 </script>

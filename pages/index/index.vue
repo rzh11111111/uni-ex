@@ -3,7 +3,6 @@
 		<image class="logo" src="/static/logo.png"></image>
 		<view class="text-area">
 			<text class="title">{{title}}</text>
-			<van-button type="default">默认按钮</van-button>
 		</view>
 		<test :msg="msg" @testShowName="testEvent"></test>
 		
